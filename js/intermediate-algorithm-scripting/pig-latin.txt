@@ -1,0 +1,13 @@
+function translatePigLatin(str) {
+  console.log('str', str);
+  if (/^[aiueo]/.test(str)) {
+    // if vowel
+    return `${str}way`;
+  } else {
+    let [newEnd] = /^[b-df-hj-np-tv-z]+/.exec(str);
+    let newStart = str.slice(newEnd.length);
+    return `${newStart}${newEnd}ay`;
+  }
+}
+
+translatePigLatin("consonant");

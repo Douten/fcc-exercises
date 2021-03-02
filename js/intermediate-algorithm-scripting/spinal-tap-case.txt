@@ -1,0 +1,17 @@
+function spinalCase(str) {
+  console.log(str.split(/[\s_-]/));
+
+  let nonCharArr = str.split(/[\s_-]/);
+
+  let words = nonCharArr.map((string) => {
+    let lowerString = string.charAt(0).toLowerCase() + string.slice(1);
+    let stringArr = lowerString.split(/(?=[A-Z])/g);
+    return stringArr;
+  })
+
+  let spinal = words.flat(1).join('-').toLowerCase();
+
+  return spinal
+}
+
+spinalCase('This Is Spinal Tap');

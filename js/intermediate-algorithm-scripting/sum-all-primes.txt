@@ -1,0 +1,21 @@
+function isPrime(num) {
+  for(var i = 2; i < num; i++)
+    if(num % i === 0) return false;
+  return num > 1;
+}
+
+function sumPrimes(num) {
+  let count = 1;
+  let sum = 0;
+  do {
+    if (isPrime(count)) {
+      sum += count;
+    }
+    count++;
+  }
+  while(count <= num);
+  console.log('sum', sum);
+  return sum;
+}
+
+sumPrimes(10);

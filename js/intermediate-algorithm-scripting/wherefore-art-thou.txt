@@ -1,0 +1,26 @@
+function whatIsInAName(collection, source) {
+  var arr = [];
+  // Only change code below this line
+  let srcKeys = Object.keys(source);
+  let srcValues = Object.values(source);
+  arr = collection.filter((obj) => {
+    console.log(obj)
+    let objKeys = Object.keys(obj)
+
+
+    return srcKeys.every((srcKey) => {
+      console.log('srcKey', srcKey)
+      console.log('objKeys', objKeys)
+      console.log('includes', objKeys.includes(srcKey))
+      console.log('same value', obj[srcKey] === source[srcKey])
+      return objKeys.includes(srcKey)
+        && obj[srcKey] === source[srcKey];
+    });
+
+  });
+  console.log('arr', arr);
+  // Only change code above this line
+  return arr;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });

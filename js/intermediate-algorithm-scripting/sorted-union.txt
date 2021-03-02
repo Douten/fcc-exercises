@@ -1,0 +1,24 @@
+function uniteUnique(...arr) {
+  let counted = [];
+  let unique = arr.reduce((source, next) => {
+    console.log('source', source);
+    console.log('next', next);
+
+    console.log('counted', counted);
+
+    let unique = next.filter((ele) => {
+      if (counted.includes(ele)) {
+        return false;
+      }
+      counted.push(ele);
+      return ele;
+    });
+
+    return [...source, ...unique]
+
+  }, []);
+
+  return unique;
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);

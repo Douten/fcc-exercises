@@ -1,0 +1,7 @@
+function destroyer(mom, ...arr) {
+  return mom.filter((child) => {
+    return !arr.includes(child);
+  });
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);

@@ -1,0 +1,25 @@
+function convertHTML(str) {
+  let htmlEntitiesMapping = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&apos;'
+  }
+  console.log('str', str.split('').map((char) => {
+    if (['&', '<', '>', '"', "'"].includes(char)) {
+      return htmlEntitiesMapping[char];
+    }
+
+    return char
+  }).join(''))
+  return str.split('').map((char) => {
+    if (['&', '<', '>', '"', "'"].includes(char)) {
+      return htmlEntitiesMapping[char];
+    }
+
+    return char
+  }).join('');
+}
+
+convertHTML("Dolce & Gabbana");

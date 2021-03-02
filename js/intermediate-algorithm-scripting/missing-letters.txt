@@ -1,0 +1,25 @@
+const alphabet = "abcdefghijklmnopqrstuvwxyz".split('');
+
+function fearNotLetter(str) {
+  let missing = [];
+  let letters = str.split('');
+  let firstLetter = str[0];
+  let lastLetter = str[(str.length - 1)];
+
+  let startIdx = alphabet.indexOf(firstLetter);
+  let endIdx = alphabet.indexOf(lastLetter);
+ 
+  alphabet.slice(startIdx, endIdx).forEach((char) => {
+    if (!letters.includes(char)) {
+      missing.push(char);
+    }
+  });
+
+  if (!missing.length) {
+    return undefined
+  }
+  
+  return missing.join('');
+}
+
+fearNotLetter("abce");

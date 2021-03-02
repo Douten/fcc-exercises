@@ -1,0 +1,10 @@
+function sumAll(arr) {
+  let [start, end] = arr.sort((x, y) => x > y);
+
+  // gauss method
+  // read more here: https://betterexplained.com/articles/techniques-for-adding-the-numbers-1-to-100/
+  let n = (end - start) + 1
+  return (n / 2)*(start + end);
+}
+
+sumAll([1, 4]);
